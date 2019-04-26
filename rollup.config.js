@@ -1,6 +1,7 @@
 // rollup.config.js
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
+import { uglify } from 'rollup-plugin-uglify'
 import pkg from './package.json'
 
 export default {
@@ -20,5 +21,6 @@ export default {
       exclude: 'node_modules/**', // 只编译我们的源代码
     }),
     resolve(),
+    uglify(),
   ],
 }
